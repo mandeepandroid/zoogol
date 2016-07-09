@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#4fa6c2"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/iv_navigationDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/iv_navigationDrawer"
+            android:text="Untrace Purchase"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Has one of your purchases not tracked yet?"
+                    android:textColor="#000000" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Most of your purchases should appear in your account within 48 hours. If transaction is not tracked within 48 hours, Simply add a New Request with details of your transaction, and we will speak with the merchant's to see why it did not track. Untraced purchase requests may only be submitted within 10 days following the original transaction date. Requests that are submitted for purchases made more than 10 days ago after the transaction date will be declined. Below is a list of your queries and their status. For any other questions, please feel free to Contact Us."
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+
+                    android:background="#3583C9"
+                    android:text="Add"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_list_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="#4fa6c2"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:visibility="visible"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Date of Query"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Website"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="Description"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Amount"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Status"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+            </ListView>
+
+            <LinearLayout
+                android:id="@+id/ll_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="#f1f1f2"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <EditText
+                    android:id="@+id/et_select_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:hint="Select Date"
+                    android:paddingLeft="@dimen/_10sdp"></EditText>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <Spinner
+                        android:id="@+id/spinner_website_name"
+                        android:layout_width="match_parent"
+
+
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@drawable/drawable_edit"></Spinner>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:background="#e6e7e8"
+                        android:src="@drawable/spinner_drop_down" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/et_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:hint="Transaction ID/Order ID"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/et_coupan"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:hint="Coupon Code"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:hint="Amount of Purchase"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/et_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:hint="Remark"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/et_bill"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/drawable_edit"
+                    android:gravity="center_vertical"
+                    android:hint="Upload Bill"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="@dimen/_10sdp" />
+
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_forgot_password"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:background="#3583C9"
+                    android:text="Submit"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

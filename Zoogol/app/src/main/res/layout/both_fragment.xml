@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#4fa6c2"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/iv_navigationDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/iv_navigationDrawer"
+            android:src="@drawable/small_logo" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#606062"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Start shooping at your favourite  merchants"
+            android:textColor="#ffffff"
+
+            android:textSize="@dimen/_11sdp" />
+
+        <ImageView
+            android:id="@+id/iv_list_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/list" />
+
+        <ImageView
+            android:id="@+id/iv_grid_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+
+            android:layout_toLeftOf="@+id/iv_list_icon"
+            android:src="@drawable/four_grid" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="#4fa6c2"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_5sdp"
+            android:text="Online" />
+
+
+        <TextView
+            android:id="@+id/tv_instore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="#4fa6c2"
+
+
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_5sdp"
+            android:text="Instore" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,153 @@
+
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#4FA6C2" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back_icon" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/navigation" />
+    </RelativeLayout>
+    
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#DFDFDF"
+        android:layout_below="@+id/rl_header"
+        android:id="@+id/rl_slider">
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SLIDER"
+            android:layout_centerInParent="true"/>
+        
+    </RelativeLayout>
+    
+    
+    
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="#828282"
+    android:layout_margin="10dp"
+    android:layout_below="@+id/rl_slider"
+    android:id="@+id/rl_merchant">
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online Merchant"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"/>
+    
+</RelativeLayout>
+    
+    <com.devsmart.android.ui.HorizontalListView
+    android:id="@+id/hlistview"
+    android:layout_below="@+id/rl_merchant"
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+   
+    android:background="#000000"
+    />
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/rl_header"
+        android:layout_marginTop="2dp"
+        android:background="#E6E7E8" />
+
+  
+    
+   <RelativeLayout android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="#828282"
+    android:layout_margin="10dp"
+    android:layout_below="@+id/hlistview"
+    android:id="@+id/rl_instore">
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instore Merchants"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"/>
+    
+</RelativeLayout>
+
+   <com.devsmart.android.ui.HorizontalListView
+    android:id="@+id/hlistview2"
+    android:layout_below="@+id/rl_instore"
+    android:layout_width="fill_parent"
+    android:layout_height="70dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+   
+    android:background="#000000"
+    />
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E6E7E8"
+        
+        android:orientation="horizontal"
+        android:weightSum="6">
+        
+        <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+         <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+         
+          <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+          
+           <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+           
+            <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+            
+             <ImageView android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+        
+    </LinearLayout>          
+
+</RelativeLayout>
