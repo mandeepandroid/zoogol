@@ -45,9 +45,8 @@ public class ForgotPassword extends Activity implements View.OnClickListener {
     // CHECK INTERNET CONNECTION
     private Boolean isInternetPresent = false;
     private ConnectionDetector cd;
-    private ImageView iv_back;
     private EditText et_email;
-    private Button tv_mail_password;
+    private TextView tv_mail_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +60,7 @@ public class ForgotPassword extends Activity implements View.OnClickListener {
 
     private void initView() {
 
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        tv_mail_password = (Button) findViewById(R.id.tv_mail_password);
+        tv_mail_password = (TextView) findViewById(R.id.tv_mail_password);
         tv_mail_password.setOnClickListener(this);
 
         et_email = (EditText) findViewById(R.id.et_email);

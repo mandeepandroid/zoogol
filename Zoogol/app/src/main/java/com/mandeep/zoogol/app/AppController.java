@@ -1,6 +1,7 @@
 package com.mandeep.zoogol.app;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
@@ -10,7 +11,7 @@ import com.android.volley.toolbox.Volley;
 import com.mandeep.zoogol.utils.LruBitmapCache;
 
 
-public class AppController extends Application {
+public class AppController extends MultiDexApplication {
 
 	public static final String TAG = AppController.class.getSimpleName();
 

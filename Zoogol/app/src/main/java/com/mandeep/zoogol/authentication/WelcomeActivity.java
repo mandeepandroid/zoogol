@@ -30,7 +30,7 @@ public class WelcomeActivity extends FragmentActivity {
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
 
-    RelativeLayout rl_first, rl_second;
+    RelativeLayout rl_bottom;
 
     View view1, view2, view3;
     private CountDownTimer countDownTimer;
@@ -49,10 +49,9 @@ public class WelcomeActivity extends FragmentActivity {
         view2 = (View) findViewById(R.id.view2);
         view3 = (View) findViewById(R.id.view3);
 
-        rl_first = (RelativeLayout) findViewById(R.id.rl_first);
-        rl_second = (RelativeLayout) findViewById(R.id.rl_second);
+        rl_bottom = (RelativeLayout) findViewById(R.id.rl_bottom);
 
-        rl_first.setOnClickListener(new View.OnClickListener() {
+        rl_bottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
@@ -60,13 +59,6 @@ public class WelcomeActivity extends FragmentActivity {
             }
         });
 
-        rl_second.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
-                //finish();429868
-            }
-        });
 
         pageAdapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
         pager.setAdapter(pageAdapter);

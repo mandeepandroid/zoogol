@@ -53,9 +53,9 @@ public class SignUpActivity extends Activity implements View.OnClickListener {
 
     //Facebook callback
     private CallbackManager callbackManager;
-private ImageView iv_back;
     private EditText et_name, et_email, et_mobile, et_password, et_friend;
-    private Button tv_signin_button, btn_facebook;
+    private TextView tv_signin_button,tv_signin;
+    ImageView iv_facebook,iv_google;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,31 +63,37 @@ private ImageView iv_back;
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.register_activity);
-
         initView();
+        setClickListener();
         facebookLogin();
     }
 
+
     private void initView() {
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         et_name = (EditText) findViewById(R.id.et_name);
         et_email = (EditText) findViewById(R.id.et_email);
         et_password = (EditText) findViewById(R.id.et_password);
         et_mobile = (EditText) findViewById(R.id.et_mobile);
         et_friend = (EditText) findViewById(R.id.et_friend);
+        tv_signin = (TextView) findViewById(R.id.tv_signin);
+        tv_signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SignUpActivity.this,"Hii i m here",Toast.LENGTH_SHORT).show();
+            }
+        });
+        tv_signin_button = (TextView) findViewById(R.id.tv_signin_button);
+        iv_facebook = (ImageView) findViewById(R.id.iv_facebook);
+        iv_facebook.setOnClickListener(this);
+        iv_google = (ImageView) findViewById(R.id.iv_google);
 
-        tv_signin_button = (Button) findViewById(R.id.tv_signin_button);
+    }
+    private void setClickListener() {
         tv_signin_button.setOnClickListener(this);
-
-        btn_facebook = (Button) findViewById(R.id.tv_signin_button);
-        btn_facebook.setOnClickListener(this);
+        iv_google.setOnClickListener(this);
+        tv_signin.setOnClickListener(this);
     }
 
     private void showProgressDialog() {
@@ -238,9 +244,10 @@ private ImageView iv_back;
             case R.id.tv_signin_button:
                 makeJsonRegisterRequest();
                 break;
-
-
-            case R.id.btn_facebook:
+            case R.id.tv_signIn:
+                finish();
+                break;
+            case R.id.iv_facebook:
                 try {
                     LoginManager.getInstance().logInWithReadPermissions(SignUpActivity.this, Arrays.asList("public_profile"));
                 } catch (Exception e) {
@@ -248,9 +255,10 @@ private ImageView iv_back;
                 }
                 break;
 
-            case R.id.btn_google:
+            case R.id.iv_google:
 
                 break;
+
         }
     }
 }

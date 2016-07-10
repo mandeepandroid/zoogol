@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.AuthFailureError;
@@ -99,8 +100,8 @@ public class LoginActivity extends Activity implements View.OnClickListener,
     String PROJECT_NUMBER = "82557879609";
     private String deviceID;
     private EditText et_email, et_password;
-    private TextView tv_forgot_password, tv_signup;
-    private Button btn_signin_button, btn_facebook, btn_google;
+    private TextView tv_forgot_password, tv_signup,btn_signin_button;
+    private ImageView  btn_facebook, btn_google;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,11 +158,11 @@ public class LoginActivity extends Activity implements View.OnClickListener,
         tv_signup = (TextView) findViewById(R.id.tv_signup);
         tv_signup.setOnClickListener(this);
 
-        btn_signin_button = (Button) findViewById(R.id.btn_signin);
+        btn_signin_button = (TextView) findViewById(R.id.btn_signin);
         btn_signin_button.setOnClickListener(this);
-        btn_facebook = (Button) findViewById(R.id.btn_facebook);
+        btn_facebook = (ImageView) findViewById(R.id.iv_facebook);
         btn_facebook.setOnClickListener(this);
-        btn_google = (Button) findViewById(R.id.btn_google);
+        btn_google = (ImageView) findViewById(R.id.iv_google);
         btn_google.setOnClickListener(this);
 
         et_email = (EditText) findViewById(R.id.et_email);
@@ -406,7 +407,7 @@ public class LoginActivity extends Activity implements View.OnClickListener,
             case R.id.tv_signup:
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
                 break;
-            case R.id.btn_facebook:
+            case R.id.iv_facebook:
                 try {
                     LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile"));
                 } catch (Exception e) {
@@ -414,7 +415,7 @@ public class LoginActivity extends Activity implements View.OnClickListener,
                 }
                 break;
 
-            case R.id.btn_google:
+            case R.id.iv_google:
                 processSignIn();
                 break;
         }
